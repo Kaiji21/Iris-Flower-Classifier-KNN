@@ -25,15 +25,21 @@ knn.fit(data_train, target_train)
 
 
 st.title("Iris Flower Classification")
-st.image("iris_flower.jpg", caption="Iris Flower")
 
-st.write("A simple web application built with Streamlit that uses the K-Nearest Neighbors (KNN) algorithm to classify Iris flowers based on user-inputted characteristics.")
+col1,col2= st.columns(2)
+col1.image("iris_flower.jpg", caption="Iris Flower")
+
+
+col2.write("### A simple web application built with Streamlit that uses the K-Nearest Neighbors (KNN) algorithm to classify Iris flowers based on user-inputted characteristics.")
+
+st.write("### Input Data")
 st.caption("Enter the characteristics of an Iris flower below to predict its species (Setosa, Versicolour, or Virginica) using the K-Nearest Neighbors (KNN) algorithm.")
 
-sepal_length = st.number_input("Sepal Length (cm)", min_value=0.0, max_value=10.0, value=5.0, step=0.1)
-sepal_width = st.number_input("Sepal Width (cm)", min_value=0.0, max_value=10.0, value=3.0, step=0.1)
-petal_length = st.number_input("Petal Length (cm)", min_value=0.0, max_value=10.0, value=1.5, step=0.1)
-petal_width = st.number_input("Petal Width (cm)", min_value=0.0, max_value=10.0, value=0.2, step=0.1)
+col3,col4= st.columns(2)
+sepal_length = col3.number_input("Sepal Length (cm)", min_value=0.0, max_value=10.0, value=5.0, step=0.1)
+sepal_width = col4.number_input("Sepal Width (cm)", min_value=0.0, max_value=10.0, value=3.0, step=0.1)
+petal_length = col3.number_input("Petal Length (cm)", min_value=0.0, max_value=10.0, value=1.5, step=0.1)
+petal_width = col4.number_input("Petal Width (cm)", min_value=0.0, max_value=10.0, value=0.2, step=0.1)
 
 if st.button("Predict Iris Class"):
 
@@ -44,7 +50,7 @@ if st.button("Predict Iris Class"):
     flower_classes = {0: "Setosa", 1: "Versicolour", 2: "Virginica"}
     predicted_class = flower_classes[prediction[0]]
 
-    st.write(f"The predicted class is: **{predicted_class}**")
+    st.write(f"### The predicted class is: **{predicted_class}**")
 
 target_pred = knn.predict(data_test)
 accuracy = accuracy_score(target_test, target_pred)
