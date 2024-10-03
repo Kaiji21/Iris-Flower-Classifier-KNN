@@ -56,3 +56,11 @@ target_pred = knn.predict(data_test)
 accuracy = accuracy_score(target_test, target_pred)
 st.write(f"Model accuracy: {accuracy * 100:.2f}%")
 
+st.markdown(
+    """
+    <div style="text-align: center; font-size: 9px; color: gray;">
+        <p>Created by ELHAIBA</p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
