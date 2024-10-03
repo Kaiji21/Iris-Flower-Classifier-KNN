@@ -1,6 +1,3 @@
 streamlit
-sklearn
-matplotlib.pyplot
-sklearn.model_selection
-sklearn.neighbors
-sklearn.metrics
+scikit-learn
+matplotlib
