@@ -6,7 +6,10 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score
 
 
-
+st.set_page_config(
+    page_title="Iris classifier",
+    page_icon="👋",
+)
 
 
 iris = datasets.load_iris()
